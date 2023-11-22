@@ -9,7 +9,7 @@ public class intZeigerKeller {
     private Node top;
     private int N;
 
-    public ZeigerKeller() {
+    public intZeigerKeller() {
         top = null;
         N = 0;
     }
