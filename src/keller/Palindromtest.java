@@ -1,6 +1,6 @@
 package keller;
 
-public class Palindrom {
+public class Palindromtest {
 
     public static boolean istPalindrom(String p) {
         intKeller k = new intArrayKeller(20);
