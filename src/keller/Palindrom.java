@@ -3,7 +3,7 @@ package keller;
 public class Palindrom {
 
     public static boolean istPalindrom(String p) {
-        intKeller k = new intArrayKeller();
+        intKeller k = new intArrayKeller(20);
 
         for(int i=0; i<p.length()/2; i++) {
             k.push( (int) p.charAt(i) );

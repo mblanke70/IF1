@@ -37,7 +37,7 @@ public class intArraySchlange implements intSchlange {
         int c = first;
         for(int i = 0; i < N; i++) {
             s += data[c] + " ";
-            c++; if (c == data.length) c = 0;
+            c = (c+1) % data.length);
         }
         return s;
     }

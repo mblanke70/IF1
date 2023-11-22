@@ -8,9 +8,9 @@ public class Verschiebebahnhof {
 
     public Verschiebebahnhof()
     {
-        gleisA = new intArrayKeller();
-        gleisB = new intArrayKeller();
-        gleisC = new intArrayKeller();
+        gleisA = new intArrayKeller(10);
+        gleisB = new intArrayKeller(10);
+        gleisC = new intArrayKeller(10);
 
         gleisA.push(13);
         gleisA.push(4);
