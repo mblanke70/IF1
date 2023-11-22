@@ -1,6 +1,6 @@
 package keller;
 
-public class intZeigerKeller {
+public class intZeigerKeller implements intKeller {
     private class Node {
         int item;
         Node next;
@@ -22,7 +22,7 @@ public class intZeigerKeller {
         top = newNode;
         N++;
     }
-    public int top() {
+    public int peek() {
         if(isEmpty()) throw new RuntimeException();
         return top.item;
     }

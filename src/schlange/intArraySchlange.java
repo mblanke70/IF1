@@ -1,6 +1,6 @@
 package schlange;
 
-public class intArraySchlange {
+public class intArraySchlange implements intSchlange {
     private int[] data;
     private int first;
     private int last;
