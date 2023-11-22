@@ -20,6 +20,15 @@ public class Verschiebebahnhof {
         gleisA.push(23);
     }
 
+    public static void main(String[] args) {
+
+        Verschiebebahnhof bhf = new Verschiebebahnhof();
+
+        System.out.println(bhf);
+        bhf.sortieren();
+        System.out.println(bhf);
+    }
+
     public void verschieben(intKeller von, intKeller nach){
         nach.push(von.pop());
     }
