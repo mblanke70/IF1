@@ -13,23 +13,20 @@ public class intArrayKeller implements intKeller {
     public boolean isEmpty() {
         return topindex == 0;
     }
-
     public void push(int x) {
-        if(topindex==data.length) {
+        if(topindex == data.length) {
             throw new RuntimeException("Der Keller ist voll!");
         }
 
         data[topindex] = x;
         topindex++;
     }
-
     public int peek() {
         if( isEmpty() ) {
             throw new RuntimeException("Der Keller ist leer!");
         }
         return data[topindex-1];
     }
-
     public int pop() {
         if( isEmpty() ) {
             throw new RuntimeException("Der Keller ist leer!");
@@ -38,7 +35,9 @@ public class intArrayKeller implements intKeller {
         topindex--;
         return data[topindex];
     }
-
+    public int size() {
+        return topindex;
+    }
     public String toString() {
         String s = "";
 
@@ -48,5 +47,4 @@ public class intArrayKeller implements intKeller {
 
         return s;
     }
-
 }
