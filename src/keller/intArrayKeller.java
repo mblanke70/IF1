@@ -18,7 +18,7 @@ public class intArrayKeller implements intKeller {
         data[topindex] = x;
         topindex++;
     }
-    public int peek() {
+    public int top() {
         if( isEmpty() ) throw new RuntimeException("Der Keller ist leer!");
         return data[topindex-1];
     }

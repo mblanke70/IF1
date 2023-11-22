@@ -22,7 +22,7 @@ public class intZeigerKeller implements intKeller {
         top = newNode;
         N++;
     }
-    public int peek() {
+    public int top() {
         if(isEmpty()) throw new RuntimeException();
         return top.item;
     }

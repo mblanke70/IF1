@@ -38,7 +38,7 @@ public class Verschiebebahnhof {
 
         while(!gleisA.isEmpty() ) {
 
-            while( !gleisC.isEmpty() && gleisA.peek() < gleisC.peek() ) {
+            while( !gleisC.isEmpty() && gleisA.top() < gleisC.top() ) {
                 verschieben(gleisC, gleisB);
             }
 

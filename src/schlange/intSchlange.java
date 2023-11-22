@@ -5,5 +5,4 @@ public interface intSchlange {
     public int dequeue();
     public int head();
     public boolean isEmpty();
-    public int size();
 }
