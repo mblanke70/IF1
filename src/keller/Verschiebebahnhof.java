@@ -8,9 +8,9 @@ public class Verschiebebahnhof {
 
     public Verschiebebahnhof()
     {
-        gleisA = new intArrayKeller();
-        gleisB = new intArrayKeller();
-        gleisC = new intArrayKeller();
+        gleisA = new intArrayKeller(10);
+        gleisB = new intArrayKeller(10);
+        gleisC = new intArrayKeller(10);
 
         gleisA.push(13);
         gleisA.push(4);
@@ -18,6 +18,15 @@ public class Verschiebebahnhof {
         gleisA.push(10);
         gleisA.push(11);
         gleisA.push(23);
+    }
+
+    public static void main(String[] args) {
+
+        Verschiebebahnhof bhf = new Verschiebebahnhof();
+
+        System.out.println(bhf);
+        bhf.sortieren();
+        System.out.println(bhf);
     }
 
     public void verschieben(intKeller von, intKeller nach){
@@ -29,7 +38,7 @@ public class Verschiebebahnhof {
 
         while(!gleisA.isEmpty() ) {
 
-            while( !gleisC.isEmpty() && gleisA.peek() < gleisC.peek() ) {
+            while( !gleisC.isEmpty() && gleisA.top() < gleisC.top() ) {
                 verschieben(gleisC, gleisB);
             }
 
