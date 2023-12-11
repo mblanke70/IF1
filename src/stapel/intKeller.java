@@ -1,4 +1,4 @@
-package keller;
+package stapel;
 
 public interface intKeller {
     public boolean isEmpty();

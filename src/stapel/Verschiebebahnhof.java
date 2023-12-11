@@ -1,4 +1,4 @@
-package keller;
+package stapel;
 
 public class Verschiebebahnhof {
 

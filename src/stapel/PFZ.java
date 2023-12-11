@@ -1,4 +1,4 @@
-package keller;
+package stapel;
 
 public class PFZ {
     public static boolean istPrim(int n) {
