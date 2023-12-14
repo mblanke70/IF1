@@ -1,6 +1,6 @@
 package stapel;
 
-public class Stack<E> implements Keller<E> {
+public class Stack<E> {
     private class Node {
         E item;
         Node next;

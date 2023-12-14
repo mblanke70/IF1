@@ -39,7 +39,7 @@ public class Queue<E> {
     public String toString() {
         String s = "";
         for (Node p = first; p != null; p = p.next)
-            s = p.item + " " + s;
+            s += p.item + " ";
         return s;
     }
     public int size() { return N; }
