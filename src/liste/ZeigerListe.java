@@ -3,11 +3,11 @@ package liste;
 public class ZeigerListe<E> implements Liste<E> {
 
     private class Node {
-        E item;         // data
-        Node next;      // next
+        E item;
+        Node next;
     }
 
-    private Node first;     // head
+    private Node first;
     private Node last;
     private int N;          // length
 
@@ -34,30 +34,22 @@ public class ZeigerListe<E> implements Liste<E> {
 
     @Override
     public void insertAt(int index, E inhalt) {
-        if( index<0 || index>N ) throw new RuntimeException();
+        if( index<0 || index>N ) throw new IndexOutOfBoundsException();
 
         Node newNode = new Node();
         newNode.item = inhalt;
 
-        // Liste leer
-        if( isEmpty() ) {
-            last = first = newNode;
-        // Liste nicht leer
-        } else {
-            // hinten anfügen
-            if ( index == N ) {
-                last.next = newNode;
-                last = newNode;
-            // vorne anfügen
-            } else if ( index==0 ) {
-                newNode.next = first;
-                first = newNode;
-            // "mittig" einfügen
-            } else {
-                Node a = getNode(index-1);
-                newNode.next = a.next;
-                a.next = newNode;
-            }
+        if ( index==0 ) {  // vorne anfügen
+            newNode.next = first;
+            first = newNode;
+            if( newNode.next == null) last = newNode;
+        } else if ( index==N ) {  // hinten anfügen
+            last.next = newNode;
+            last = newNode;
+        } else {  // "mittig" einfügen
+            Node a = getNode(index-1);
+            newNode.next = a.next;
+            a.next = newNode;
         }
 
         N++;
@@ -74,16 +66,12 @@ public class ZeigerListe<E> implements Liste<E> {
     public void delete(int index) {
         if( index<0 || index>N-1 ) throw new RuntimeException();
 
-        // vorne löschen
-        if( index == 0 ) {
+        if( index == 0 ) {  // vorne löschen
             first = first.next;
-        // nicht vorne löschen
-        } else  {
+        } else  {  // nicht vorne löschen
             Node a = getNode(index-1);
             a.next = a.next.next;
-
-            // letztes Element gelöscht
-            if( a.next == null ) last = a;
+            if( a.next == null ) last = a;  // letztes Element gelöscht
         }
 
         N--;

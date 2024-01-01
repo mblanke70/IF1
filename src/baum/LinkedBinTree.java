@@ -5,6 +5,11 @@ public class LinkedBinTree<E> {
         E item;
         Node left;
         Node right;
+
+        public Node(E item) {
+            this.item = item;
+            left = right = null;
+        }
     }
 
     private Node root;
@@ -14,7 +19,10 @@ public class LinkedBinTree<E> {
      * Der Baum besitzt keine Teilbäume. Die Wurzel besitzt keinen Inhalt.
      */
     public LinkedBinTree() {
-        root = new Node();
+        root = null;
+    }
+    public LinkedBinTree(E item) {
+        root = new Node(item);
     }
 
     private LinkedBinTree(Node root) {
@@ -81,7 +89,7 @@ public class LinkedBinTree<E> {
         return root.right != null;
     }
 
-    public boolean isLeaf() {
-        return root.left == null && root.right == null;
-    }
+    public boolean isLeaf() { return !hasLeft() && !hasRight(); }
+
+    public boolean isEmpty() { return root == null; }
 }
