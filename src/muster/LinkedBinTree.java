@@ -4,9 +4,9 @@ package muster;
  * Klasse BinTree zur Umsetzung des ADT Binärbaum entsprechend der Vorgaben
  * des KC Informatik für die gymnasiale Oberstufe in Niedersachsen
  * @author Malte Blanke
- * @version 0.11_20231231
+ * @version 0.12_20240119
  */
-public class LinkedBinTree<E> {
+public class LinkedBinTree<E> implements BinTree<E> {
     private class Node {
         E item;
         Node left, right;
@@ -85,17 +85,13 @@ public class LinkedBinTree<E> {
      * Der übergebene Baum wird als linker Teilbaum gesetzt.
      * @param left Der Baum, der als linker Teilbaum gesetzt werden soll.
      */
-    public void setLeft(LinkedBinTree<E> left) {
-        root.left = left.root;
-    }
+    public void setLeft(BinTree<E> left) { root.left = ((LinkedBinTree<E>) left).root; }
 
     /**
      * Der übergebene Baum wird als rechter Teilbaum gesetzt.
      * @param right Der Baum, der als rechter Teilbaum gesetzt werden soll.
      */
-    public void setRight(LinkedBinTree<E> right) {
-        root.right = right.root;
-    }
+    public void setRight(BinTree<E> right) { root.right = ((LinkedBinTree<E>) right).root; }
 
     /**
      * Die Operation prüft, ob der Baum einen linken Teilbaum besitzt.
