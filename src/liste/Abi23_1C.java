@@ -17,6 +17,8 @@ public class Abi23_1C {
 
     public static boolean ringPrüfen() {
 
+        boolean istRing = true;
+
         for(int i=0; i<q.size(); i++) {
 
             Dominostein d1 = q.dequeue();
@@ -24,11 +26,11 @@ public class Abi23_1C {
 
             q.enqueue(d1);
             if(d1.getRechts() != d2.getLinks()) {
-                return false;
+                istRing = false;
             }
         }
 
-        return true;
+        return istRing;
     }
 
 }
