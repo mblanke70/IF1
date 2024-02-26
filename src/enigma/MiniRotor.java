@@ -13,16 +13,28 @@ public class MiniRotor {
 
         for(int i=0; i<8; i++) {
             char c = cfg.charAt(i);
-
-            // berechne RTL-Verschiebungszahl, die zum Buchstaben c gehört
-            // und speichere diese in rtl an Position i
+            rtl[i] = (c - (i+65) + 8) % 8;
+            ltr[c-65] = (8 - rtl[i]) % 8;
         }
 
         System.out.println(Arrays.toString(rtl));
+        System.out.println(Arrays.toString(ltr));
     }
 
-    public static void main(String[] argv) {
-        MiniRotor r = new MiniRotor("BDGCAEFH");
+    public char transform(char c, int dir) { // 1: rtl, 0: ltr
+        if(dir == 1) {
+            return (char) (((c-65) + rtl[(c-65-pos+8) % 8]) % 8 + 65);
+        } else {
+            return (char) (((c-65) + ltr[(c-65-pos+8) % 8]) % 8 + 65);
+        }
+    }
+
+    public void step() {
+        pos = (pos+1) % 8;
+    }
+
+    public int getPos() {
+        return pos;
     }
 
 }
