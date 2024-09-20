@@ -1,0 +1,50 @@
+Index: src/keller/PFZ.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/keller/PFZ.java b/src/keller/PFZ.java
+new file mode 100644
+--- /dev/null	(date 1701682668302)
++++ b/src/keller/PFZ.java	(date 1701682668302)
+@@ -0,0 +1,40 @@
++package keller;
++
++public class PFZ {
++    public static intKeller pfz(int n) {
++        intKeller k = new intArrayKeller();
++        for(int i=2; i<n-1; i++) {
++            if( istPrim(i) ) {
++                if( n % i == 0) {
++                    k.push(i);
++                }
++            }
++        }
++        return k;
++    }
++    public static intKeller pfz2(int n) {
++        intKeller k = new intArrayKeller();
++        for(int i=2; i<n-1; i++) {
++            if( istPrim(i) ) {
++                /*
++                if( n % i == 0) {
++                    k.push(i);
++                }
++                */
++            }
++        }
++        return k;
++    }
++    public static boolean istPrim(int n) {
++        for(int i=2; i<n-1; i++) {
++            if (n % i == 0) {
++                return false;
++            }
++        }
++        return true;
++    }
++    public static void main(String[] args) {
++        System.out.println(istPrim(15));
++        System.out.println(pfz(15));
++    }
++}

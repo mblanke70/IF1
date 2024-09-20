@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="413c1254-4669-46d5-9dcd-ca6fb26146e5" name="Changes" comment="MiniEnigma">
+      <change beforePath="$PROJECT_DIR$/src/rle/RLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rle/RLE.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="1" />
+    <option name="OUTPUT_DIRECTORY" value="G:/Kurs 12 IF1/Kryptologie/Vigenere" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mblanke70&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mblanke70/IF1&quot;,
+    &quot;accountId&quot;: &quot;f6269c41-7a4f-4956-9f25-741ff12d4557&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2Xc0Hul0fzWtwIH0dzbki5gYvqC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DKA.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EA.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RLE.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RSA.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Kurs 12 IF1/Kryptologie/Vigenere&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/malte.blanke/IdeaProjects/IF1/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\malte.blanke\IdeaProjects\IF1\src\liste" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="asym" />
+      <recent name="enigma" />
+      <recent name="aufg" />
+      <recent name="schlange" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="413c1254-4669-46d5-9dcd-ca6fb26146e5" name="Changes" comment="" />
+      <created>1698912975600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698912975600</updated>
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1701682854839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701682854839</updated>
+    </task>
+    <task id="LOCAL-00002" summary="klausuraufgaben">
+      <created>1701684628357</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701684628357</updated>
+    </task>
+    <task id="LOCAL-00003" summary="klausuraufgaben">
+      <created>1701684639818</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701684639818</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Vigenre">
+      <created>1705918317721</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705918317721</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Vigenere Zeichengruppen">
+      <created>1706098099514</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706098099514</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Kasiski">
+      <created>1706170750768</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706170750768</updated>
+    </task>
+    <task id="LOCAL-00007" summary="vigenere komplett">
+      <created>1706523354872</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706523354872</updated>
+    </task>
+    <task id="LOCAL-00008" summary="MiniRotor">
+      <created>1708336987338</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708336987338</updated>
+    </task>
+    <task id="LOCAL-00009" summary="MiniEnigma">
+      <created>1708942600510</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708942600510</updated>
+    </task>
+    <task id="LOCAL-00010" summary="MiniEnigma">
+      <option name="closed" value="true" />
+      <created>1726814216008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726814216008</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="klausuraufgaben" />
+    <MESSAGE value="Vigenre" />
+    <MESSAGE value="Vigenere Zeichengruppen" />
+    <MESSAGE value="Kasiski" />
+    <MESSAGE value="vigenere komplett" />
+    <MESSAGE value="MiniRotor" />
+    <MESSAGE value="MiniEnigma" />
+    <option name="LAST_COMMIT_MESSAGE" value="MiniEnigma" />
+  </component>
+</project>

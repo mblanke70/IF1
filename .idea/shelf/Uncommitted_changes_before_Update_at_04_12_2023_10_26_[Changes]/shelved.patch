@@ -1,0 +1,404 @@
+Index: src/keller/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package keller;\r\n\r\npublic class Main {\r\n\r\n    public static void main(String[] args) {\r\n\r\n        Verschiebebahnhof bhf = new Verschiebebahnhof();\r\n\r\n        System.out.println(bhf);\r\n        bhf.sortieren();\r\n        System.out.println(bhf);\r\n        bhf.sortieren();\r\n        System.out.println(bhf);\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/keller/Main.java b/src/keller/Main.java
+--- a/src/keller/Main.java	(revision a437064ae88111374d55fdca8bf2c96911c1b865)
++++ b/src/keller/Main.java	(date 1700124070748)
+@@ -3,7 +3,7 @@
+ public class Main {
+ 
+     public static void main(String[] args) {
+-
++        /*
+         Verschiebebahnhof bhf = new Verschiebebahnhof();
+ 
+         System.out.println(bhf);
+@@ -11,6 +11,17 @@
+         System.out.println(bhf);
+         bhf.sortieren();
+         System.out.println(bhf);
++        */
+ 
++        intZeigerKeller k = new intZeigerKeller();
++        k.push(34);
++        k.push(22);
++        k.push(7);
++        k.push(42);
++        k.pop();
++        k.pop();
++        k.pop();
++        k.pop();
++        System.out.println(k);
+     }
+ }
+\ No newline at end of file
+Index: src/keller/intKeller.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package keller;\r\n\r\npublic interface intKeller {\r\n\r\n    // liefert true, falls Keller leer, sonst false\r\n    public boolean isEmpty();\r\n\r\n    // legt neues Element x auf den Keller\r\n    public void push(int x);\r\n\r\n    // liefert das oberste Kellerelement\r\n    public int peek();\r\n\r\n    // löscht das oberste Kellerelement und liefert es zurück\r\n    public int pop();\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/keller/intKeller.java b/src/keller/intKeller.java
+--- a/src/keller/intKeller.java	(revision a437064ae88111374d55fdca8bf2c96911c1b865)
++++ b/src/keller/intKeller.java	(date 1700118311471)
+@@ -14,4 +14,6 @@
+     // löscht das oberste Kellerelement und liefert es zurück
+     public int pop();
+ 
++    public int length();
++
+ }
+Index: src/keller/Verschiebebahnhof.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package keller;\r\n\r\npublic class Verschiebebahnhof {\r\n\r\n    private intKeller gleisA;\r\n    private intKeller gleisB;\r\n    private intKeller gleisC;\r\n\r\n    public Verschiebebahnhof()\r\n    {\r\n        gleisA = new intArrayKeller();\r\n        gleisB = new intArrayKeller();\r\n        gleisC = new intArrayKeller();\r\n\r\n        gleisA.push(13);\r\n        gleisA.push(4);\r\n        gleisA.push(55);\r\n        gleisA.push(10);\r\n        gleisA.push(11);\r\n        gleisA.push(23);\r\n    }\r\n\r\n    public void verschieben(intKeller von, intKeller nach){\r\n        nach.push(von.pop());\r\n    }\r\n\r\n    public void sortieren() {\r\n        verschieben(gleisA, gleisC);\r\n\r\n        while(!gleisA.isEmpty() ) {\r\n\r\n            while( !gleisC.isEmpty() && gleisA.peek() < gleisC.peek() ) {\r\n                verschieben(gleisC, gleisB);\r\n            }\r\n\r\n            verschieben( gleisA, gleisC );\r\n\r\n            while( !gleisB.isEmpty() ) {\r\n                verschieben(gleisB, gleisC);\r\n            }\r\n        }\r\n    }\r\n\r\n    public String toString() {\r\n\r\n        String s = \"\";\r\n\r\n        s += \"A: \" + gleisA + \"\\n\";\r\n        s += \"B: \" + gleisB + \"\\n\";\r\n        s += \"C: \" + gleisC + \"\\n\";\r\n\r\n        return s;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/keller/Verschiebebahnhof.java b/src/keller/Verschiebebahnhof.java
+--- a/src/keller/Verschiebebahnhof.java	(revision a437064ae88111374d55fdca8bf2c96911c1b865)
++++ b/src/keller/Verschiebebahnhof.java	(date 1700121716485)
+@@ -8,9 +8,9 @@
+ 
+     public Verschiebebahnhof()
+     {
+-        gleisA = new intArrayKeller();
+-        gleisB = new intArrayKeller();
+-        gleisC = new intArrayKeller();
++        gleisA = new intZeigerKeller();
++        gleisB = new intZeigerKeller();
++        gleisC = new intZeigerKeller();
+ 
+         gleisA.push(13);
+         gleisA.push(4);
+Index: src/keller/intArrayKeller.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package keller;\r\n\r\npublic class intArrayKeller implements intKeller {\r\n\r\n    private int[] data;\r\n    private int topindex = 0;\r\n\r\n    public intArrayKeller() {\r\n        data = new int[100];\r\n        topindex = 0;\r\n    }\r\n\r\n    public boolean isEmpty() {\r\n        return topindex == 0;\r\n    }\r\n\r\n    public void push(int x) {\r\n        if(topindex==data.length) {\r\n            throw new RuntimeException(\"Der Keller ist voll!\");\r\n        }\r\n\r\n        data[topindex] = x;\r\n        topindex++;\r\n    }\r\n\r\n    public int peek() {\r\n        if( isEmpty() ) {\r\n            throw new RuntimeException(\"Der Keller ist leer!\");\r\n        }\r\n        return data[topindex-1];\r\n    }\r\n\r\n    public int pop() {\r\n        if( isEmpty() ) {\r\n            throw new RuntimeException(\"Der Keller ist leer!\");\r\n        }\r\n\r\n        topindex--;\r\n        return data[topindex];\r\n    }\r\n\r\n    public String toString() {\r\n        String s = \"\";\r\n\r\n        for(int i=0; i<topindex; i++) {\r\n            s += data[i] + \" \";\r\n        }\r\n\r\n        return s;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/keller/intArrayKeller.java b/src/keller/intArrayKeller.java
+--- a/src/keller/intArrayKeller.java	(revision a437064ae88111374d55fdca8bf2c96911c1b865)
++++ b/src/keller/intArrayKeller.java	(date 1700121799566)
+@@ -5,6 +5,8 @@
+     private int[] data;
+     private int topindex = 0;
+ 
++    private int N;
++
+     public intArrayKeller() {
+         data = new int[100];
+         topindex = 0;
+@@ -21,6 +23,7 @@
+ 
+         data[topindex] = x;
+         topindex++;
++        N++;
+     }
+ 
+     public int peek() {
+@@ -36,6 +39,7 @@
+         }
+ 
+         topindex--;
++        N--;
+         return data[topindex];
+     }
+ 
+@@ -49,4 +53,7 @@
+         return s;
+     }
+ 
++    public int length() {
++        return N;
++    }
+ }
+Index: src/schlange/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/schlange/Main.java b/src/schlange/Main.java
+new file mode 100644
+--- /dev/null	(date 1699263818534)
++++ b/src/schlange/Main.java	(date 1699263818534)
+@@ -0,0 +1,30 @@
++package schlange;
++
++import keller.Verschiebebahnhof;
++
++public class Main {
++
++    public static void main(String[] args) {
++
++        intArraySchlange s = new intArraySchlange();
++
++        s.enqueue(32);
++        s.enqueue(16);
++        s.enqueue(24);
++        s.dequeue();
++
++        System.out.println(s);
++
++        s.enqueue(8);
++        s.enqueue(9);
++
++        System.out.println(s);
++
++        s.dequeue();
++        s.dequeue();
++        s.dequeue();
++        s.dequeue();
++
++        System.out.println(s);
++    }
++}
+\ No newline at end of file
+Index: src/schlange/intArraySchlange.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/schlange/intArraySchlange.java b/src/schlange/intArraySchlange.java
+new file mode 100644
+--- /dev/null	(date 1699265172835)
++++ b/src/schlange/intArraySchlange.java	(date 1699265172835)
+@@ -0,0 +1,57 @@
++package schlange;
++
++public class intArraySchlange implements intSchlange {
++
++    private int[] data;
++    private int vorne;
++    private int hinten;
++    private int N;
++
++    public intArraySchlange() {
++        data = new int[4];
++        vorne = 0;
++        hinten = 0;
++        N = 0;
++    }
++
++    public void enqueue(int x) {
++        if( N == data.length )
++            throw new RuntimeException("Schlange ist voll");
++
++        data[hinten] = x;
++        hinten = (hinten + 1) % data.length;
++        N++;
++    }
++
++    public int head() {
++        if( isEmpty() )
++            throw new RuntimeException("Schlange ist leer");
++
++        return data[vorne];
++    }
++
++    public int dequeue() {
++        if( isEmpty() )
++            throw new RuntimeException("Schlange ist leer");
++
++        int erstes = data[vorne];
++        vorne = (vorne + 1) % data.length;
++        N--;
++        return erstes;
++    }
++
++    public boolean isEmpty() {
++        return N == 0;
++    }
++
++    public String toString() {
++        String s = "";
++
++        for(int i=0; i<N; i++) {
++            s += data[ (vorne + i) % data.length ] + " ";
++        }
++
++        return s;
++    }
++
++}
+Index: src/aufg/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/aufg/Main.java b/src/aufg/Main.java
+new file mode 100644
+--- /dev/null	(date 1699870166538)
++++ b/src/aufg/Main.java	(date 1699870166538)
+@@ -0,0 +1,41 @@
++package aufg;
++
++import keller.*;
++import schlange.*;
++
++public class Main {
++
++    public static void main(String[] args) {
++
++        intSchlange biber = new intArraySchlange();
++        intKeller teller = new intArrayKeller();
++
++        // Biber-Schlange erstellen
++        biber.enqueue(0);
++        biber.enqueue(1);
++        biber.enqueue(1);
++
++        // Teller-Stapel erstellen
++        teller.push(1);
++        teller.push(1);
++        teller.push(0);
++
++        System.out.println( prüfen(biber, teller) );
++
++    }
++
++    public static boolean prüfen(intSchlange biber, intKeller teller){
++
++        while(!biber.isEmpty() && !teller.isEmpty())  {
++            if(biber.dequeue() != teller.pop()) {
++                return false;
++            }
++        }
++
++        if(!biber.isEmpty() || !teller.isEmpty() ) {
++            return false;
++        }
++
++        return true;
++    }
++}
+\ No newline at end of file
+Index: src/schlange/intSchlange.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/schlange/intSchlange.java b/src/schlange/intSchlange.java
+new file mode 100644
+--- /dev/null	(date 1699263190911)
++++ b/src/schlange/intSchlange.java	(date 1699263190911)
+@@ -0,0 +1,15 @@
++package schlange;
++public interface intSchlange {
++
++    // Fügt x hinten an die Schlange an
++    public void enqueue(int x);
++
++    // Liefert vorderstes Element
++    public int head();
++
++    // Entfernt vorderstes Element aus der Schlange und liefert es zurück
++    public int dequeue();
++
++    // Testet, ob Schlange leer ist
++    public boolean isEmpty();
++}
+Index: src/aufg/Biber.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/aufg/Biber.java b/src/aufg/Biber.java
+new file mode 100644
+--- /dev/null	(date 1699869895774)
++++ b/src/aufg/Biber.java	(date 1699869895774)
+@@ -0,0 +1,8 @@
++package aufg;
++
++import schlange.*;
++public class Biber {
++
++    intSchlange s = new intArraySchlange();
++
++}
+Index: src/keller/intZeigerKeller.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/keller/intZeigerKeller.java b/src/keller/intZeigerKeller.java
+new file mode 100644
+--- /dev/null	(date 1700122455090)
++++ b/src/keller/intZeigerKeller.java	(date 1700122455090)
+@@ -0,0 +1,56 @@
++package keller;
++
++public class intZeigerKeller implements intKeller {
++
++    class Node {
++        int item;
++        Node next;
++    }
++
++    private Node top;
++    private int N;
++
++    public boolean isEmpty() {
++        return N == 0;
++    }
++
++    public void push(int x) {
++        Node neu = new Node();
++        neu.item = x;
++        neu.next = top;
++        top = neu;
++        N++;
++    }
++
++    public int peek() {
++        if(isEmpty()) throw new RuntimeException("Der Keller ist leer!");
++
++        return top.item;
++    }
++
++    public int pop(){
++        if(isEmpty()) throw new RuntimeException("Der Keller ist leer!");
++
++        int x = top.item;
++        top = top.next;
++        N--;
++        return x;
++    }
++
++    public int length() {
++        return N;
++    }
++
++    public String toString() {
++        String s = "";
++
++        Node hilf = top;
++        while(hilf != null) {
++            s += hilf.item + " ";
++            hilf = hilf.next;
++        }
++
++        return s;
++    }
++
++}
+Index: src/aufg/Teller.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/aufg/Teller.java b/src/aufg/Teller.java
+new file mode 100644
+--- /dev/null	(date 1699866391266)
++++ b/src/aufg/Teller.java	(date 1699866391266)
+@@ -0,0 +1,4 @@
++package aufg;
++
++public class Teller {
++}
